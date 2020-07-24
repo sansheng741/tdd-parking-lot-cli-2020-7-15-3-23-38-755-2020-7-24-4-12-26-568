@@ -1,4 +1,4 @@
-#Story1  
+# Story1  
 
 ### 停车模块    
 -------------------------------  
@@ -46,7 +46,7 @@
 **when**  fetchCar     
 **then**  no Car
 
-#Story2
+# Story2
 
 **given** ParkingBoy Wrong_Ticket  
 **when**  fetchCar     
@@ -64,7 +64,7 @@
 **when**  parkCar   
 **then**  Not enough position. 
 
-#Story3
-**given** ParkingBoy Car multiple_parking_lot(fitst parkingLot full)
+# Story3
+**given** ParkingBoy Car multiple_parking_lot(fitst parkingLot full)  
 **when**  parkCar  
 **then**  car part in second_part_lot  
