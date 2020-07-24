@@ -32,8 +32,8 @@ public class FetchCarTest {
         Ticket ticket1 = parkingBoy.parkCar(car1);
         Ticket ticket2 = parkingBoy.parkCar(car2);
         //when
-        Car car = parkingBoy.fetchCar(ticket2);
+        Car car = parkingBoy.fetchCar(ticket1);
         //then
-        Assertions.assertEquals(car.getId(),car2.getId());
+        Assertions.assertEquals(car.getId(),car1.getId());
     }
 }

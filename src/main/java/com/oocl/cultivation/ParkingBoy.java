@@ -1,7 +1,10 @@
 package com.oocl.cultivation;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author ck
@@ -10,6 +13,7 @@ import java.util.List;
 public class ParkingBoy {
 
     private ParkingLot parkingLot = new ParkingLot();
+    private Map<Ticket,Car> ticketTable = new HashMap<>();
 
     public ParkingBoy() {
     }
@@ -20,7 +24,14 @@ public class ParkingBoy {
         if(!isPark){
             return null;
         }
-        return new Ticket("T0001");
+        Ticket ticket = generateTicket();
+        ticketTable.put(ticket,car);
+        return ticket;
+    }
+
+    private Ticket generateTicket() {
+        UUID uuid = UUID.randomUUID();
+        return new Ticket(uuid.toString());
     }
 
     private boolean parkCarInParkingLot(Car car){
@@ -39,6 +50,6 @@ public class ParkingBoy {
     }
 
     public Car fetchCar(Ticket ticket) {
-        return new Car("C0001");
+        return ticketTable.get(ticket);
     }
 }
