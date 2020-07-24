@@ -50,10 +50,15 @@ public class ParkingBoy {
     }
 
     public Car fetchCar(Ticket ticket) {
+        if(ticket == null){
+            System.out.print("Please provide your parking ticket.\n");
+            return null;
+        }
         Car car = ticketTable.get(ticket);
         ticketTable.remove(ticket);
         if(car == null){
             System.out.print("Unrecognized parking ticket.\n");
+            return null;
         }
         return car;
     }
