@@ -60,6 +60,6 @@
 **when**  fetchCar     
 **then**  Please provide your parking ticket.
   
-**given** ParkingBoy Car  Full_ParkingLot  
+**given** ParkingBoy Car Full_ParkingLot  
 **when**  parkCar   
 **then**  Not enough position. 

@@ -125,4 +125,5 @@ public class FetchCarTest {
         //then
         Assertions.assertEquals("Please provide your parking ticket.\n", systemOut());
     }
+
 }
