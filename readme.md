@@ -15,7 +15,7 @@
 **when**  parkCar   
 **then**  no Ticket  
 
-**given** ParkingBoy   
+**given** ParkingBoy   no_car
 **when**  parkCar  
 **then**  no Ticket  
 
