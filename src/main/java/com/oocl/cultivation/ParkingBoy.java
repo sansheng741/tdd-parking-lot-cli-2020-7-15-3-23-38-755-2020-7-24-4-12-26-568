@@ -28,6 +28,9 @@ public class ParkingBoy {
         if(carList.size() >= 10){
             return false;
         }
+        if(carList.contains(car)){
+            return false;
+        }
         carList.add(car);
         return true;
     }
