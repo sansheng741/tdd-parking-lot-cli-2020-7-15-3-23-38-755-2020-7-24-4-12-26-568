@@ -99,4 +99,18 @@ public class FetchCarTest {
     }
 
 
+    @Test
+    void should_print_message_unrecognized_parking_ticket_when_fetchCar_given_ParkingBoy_and_already_used_ticket() {
+        System.setOut(new PrintStream(outContent));
+
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Car car = new Car("C0001");
+        Ticket ticket = parkingBoy.parkCar(car);
+        //when
+        Car CarByTicket = parkingBoy.fetchCar(ticket);
+        Car CarByUsedTicket = parkingBoy.fetchCar(ticket);
+        //then
+        Assertions.assertEquals("Unrecognized parking ticket.\n", systemOut());
+    }
 }
