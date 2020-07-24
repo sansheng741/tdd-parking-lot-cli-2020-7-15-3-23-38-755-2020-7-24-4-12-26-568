@@ -71,4 +71,16 @@ public class ParkCarTest{
         Assertions.assertNull(ticket);
     }
 
+    @Test
+    void should_return_no_ticket_when_parkCar_given_car_already_in_ParkingLot_and_parkingboy(){
+        //given
+        Car car = new Car("C0001");
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //when
+        Ticket ticket1 = parkingBoy.parkCar(car);
+        Ticket ticket2 = parkingBoy.parkCar(car);
+        //then
+        Assertions.assertNull(ticket2);
+    }
+
 }
