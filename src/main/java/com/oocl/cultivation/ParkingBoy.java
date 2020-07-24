@@ -52,6 +52,7 @@ public class ParkingBoy {
     public Car fetchCar(Ticket ticket) {
         Car car = ticketTable.get(ticket);
         ticketTable.remove(ticket);
+        System.out.print("Unrecognized parking ticket.\n");
         return car;
     }
 }
