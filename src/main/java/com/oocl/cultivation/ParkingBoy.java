@@ -24,6 +24,9 @@ public class ParkingBoy {
     }
 
     private boolean parkCarInParkingLot(Car car){
+        if(car == null){
+            return false;
+        }
         List<Car> carList = parkingLot.getCarList();
         if(carList.size() >= 10){
             return false;
