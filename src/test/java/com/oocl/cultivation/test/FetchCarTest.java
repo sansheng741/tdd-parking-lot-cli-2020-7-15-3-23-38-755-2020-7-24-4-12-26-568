@@ -113,4 +113,16 @@ public class FetchCarTest {
         //then
         Assertions.assertEquals("Unrecognized parking ticket.\n", systemOut());
     }
+
+    @Test
+    void should_print_message_please_provide_your_parking_ticket_when_fetchCar_given_ParkingBoy_and_no_ticket() {
+        System.setOut(new PrintStream(outContent));
+
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //when
+        Car car = parkingBoy.fetchCar(null);
+        //then
+        Assertions.assertEquals("Please provide your parking ticket.\n", systemOut());
+    }
 }
