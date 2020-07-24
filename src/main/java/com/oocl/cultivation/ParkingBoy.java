@@ -50,6 +50,8 @@ public class ParkingBoy {
     }
 
     public Car fetchCar(Ticket ticket) {
-        return ticketTable.get(ticket);
+        Car car = ticketTable.get(ticket);
+        ticketTable.remove(ticket);
+        return car;
     }
 }
