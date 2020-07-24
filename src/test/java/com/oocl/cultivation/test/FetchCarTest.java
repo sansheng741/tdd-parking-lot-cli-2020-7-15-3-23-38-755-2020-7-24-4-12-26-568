@@ -37,4 +37,16 @@ public class FetchCarTest {
         //then
         Assertions.assertEquals(car.getId(),car1.getId());
     }
+
+    @Test
+    void should_return_no_car_when_fetch_car_given_wrong_ticket_and_ParkingBoy() {
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Car car = new Car("C0001");
+        parkingBoy.parkCar(car);
+        //when
+        Car getCarByWrongTicket = parkingBoy.fetchCar(new Ticket("T0001"));
+        //then
+        Assertions.assertNull(getCarByWrongTicket);
+    }
 }
