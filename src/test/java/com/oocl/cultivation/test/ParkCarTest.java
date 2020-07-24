@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.internal.matchers.Not;
 
 import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 
 /**
@@ -98,6 +99,7 @@ public class ParkCarTest{
 
     @Test
     void should_return_message_not_enouth_position_when_parkCar_given_parkingBoy_and_Car_and_full_parkingLot() {
+        System.setOut(new PrintStream(outContent));
         //given
         Car car = new Car("C0001");
         ParkingBoy parkingBoy = new ParkingBoy();

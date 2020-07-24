@@ -40,6 +40,7 @@ public class ParkingBoy {
         }
         List<Car> carList = parkingLot.getCarList();
         if(carList.size() >= 10){
+            System.out.print("Not enough position.\n");
             return false;
         }
         if(carList.contains(car)){
