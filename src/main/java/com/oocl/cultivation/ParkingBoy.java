@@ -1,10 +1,7 @@
 package com.oocl.cultivation;
 
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author ck
@@ -12,12 +9,15 @@ import java.util.UUID;
  */
 public class ParkingBoy {
 
-    private ParkingLot parkingLot = new ParkingLot();
+    List<ParkingLot> parkingLotList = new ArrayList<>();
     private Map<Ticket,Car> ticketTable = new HashMap<>();
 
     public ParkingBoy() {
     }
 
+    public ParkingBoy(List<ParkingLot> parkingLotList) {
+        this.parkingLotList = parkingLotList;
+    }
 
     public Ticket parkCar(Car car) {
         boolean isPark = parkCarInParkingLot(car);

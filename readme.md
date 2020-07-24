@@ -63,3 +63,8 @@
 **given** ParkingBoy Car Full_ParkingLot  
 **when**  parkCar   
 **then**  Not enough position. 
+
+#Story3
+**given** ParkingBoy Car multiple_parking_lot(fitst parkingLot full)
+**when**  parkCar  
+**then**  car part in second_part_lot  
