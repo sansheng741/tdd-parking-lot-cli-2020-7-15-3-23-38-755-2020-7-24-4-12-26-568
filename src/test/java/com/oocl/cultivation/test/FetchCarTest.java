@@ -15,10 +15,11 @@ public class FetchCarTest {
     @Test
     void should_return_car_when_fetch_car_given_ticket_ParkingBoy() {
         //given
+        Car car = new Car("C0001");
         ParkingBoy parkingBoy = new ParkingBoy();
-        Ticket ticket = new Ticket("T0001");
+        Ticket ticket = parkingBoy.parkCar(car);
         //when
-        Car car = parkingBoy.fetchCar(ticket);
+        car = parkingBoy.fetchCar(ticket);
         //then
         Assertions.assertNotNull(car);
     }
