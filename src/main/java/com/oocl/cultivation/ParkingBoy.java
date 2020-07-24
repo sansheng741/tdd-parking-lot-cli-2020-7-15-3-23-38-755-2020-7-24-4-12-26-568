@@ -20,7 +20,7 @@ public class ParkingBoy {
         if(!isPark){
             return null;
         }
-        return new Ticket();
+        return new Ticket("T0001");
     }
 
     private boolean parkCarInParkingLot(Car car){
@@ -36,5 +36,9 @@ public class ParkingBoy {
         }
         carList.add(car);
         return true;
+    }
+
+    public Car fetchCar(Ticket ticket) {
+        return null;
     }
 }
