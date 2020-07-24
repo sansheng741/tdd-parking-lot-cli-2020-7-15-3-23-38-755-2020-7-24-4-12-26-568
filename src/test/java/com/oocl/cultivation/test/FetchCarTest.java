@@ -49,4 +49,14 @@ public class FetchCarTest {
         //then
         Assertions.assertNull(getCarByWrongTicket);
     }
+
+    @Test
+    void should_return_no_car_when_fetch_car_given_no_ticket_and_ParkingBoy() {
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        //when
+        Car car = parkingBoy.fetchCar(null);
+        //then
+        Assertions.assertNull(car);
+    }
 }
