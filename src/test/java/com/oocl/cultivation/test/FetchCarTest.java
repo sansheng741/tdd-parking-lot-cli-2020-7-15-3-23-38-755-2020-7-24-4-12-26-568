@@ -3,14 +3,21 @@ package com.oocl.cultivation.test;
 import com.oocl.cultivation.Car;
 import com.oocl.cultivation.ParkingBoy;
 import com.oocl.cultivation.Ticket;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 /**
  * @author ck
  * @create 2020-07-24 21:25
  */
 public class FetchCarTest {
+
+    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
 
     @Test
     void should_return_car_when_fetch_car_given_ticket_ParkingBoy() {
@@ -35,7 +42,7 @@ public class FetchCarTest {
         //when
         Car car = parkingBoy.fetchCar(ticket1);
         //then
-        Assertions.assertEquals(car.getId(),car1.getId());
+        Assertions.assertEquals(car.getId(), car1.getId());
     }
 
     @Test
@@ -72,4 +79,24 @@ public class FetchCarTest {
         //then
         Assertions.assertNull(CarByUsedTicket);
     }
+
+    @Test
+    void should_print_message_unrecognized_parking_ticket_when_fetchCar_given_ParkingBoy_and_wrong_ticket() {
+        System.setOut(new PrintStream(outContent));
+
+        //given
+        ParkingBoy parkingBoy = new ParkingBoy();
+        Car car = new Car("C0001");
+        parkingBoy.parkCar(car);
+        //when
+        car = parkingBoy.fetchCar(new Ticket("T0001"));
+        //then
+        Assertions.assertEquals("Unrecognized parking ticket.\n", systemOut());
+    }
+
+    private String systemOut() {
+        return outContent.toString();
+    }
+
+
 }
