@@ -24,7 +24,7 @@ public class ParkingLotServiceManager {
         return parkingBoyList;
     }
 
-    public Car specifyParkingBoyToParkCar() {
-        return new Car();
+    public Ticket specifyParkingBoyToParkCar() {
+        return new Ticket("T0001",0);
     }
 }

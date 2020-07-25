@@ -3,6 +3,7 @@ package com.oocl.cultivation.test;
 import com.oocl.cultivation.Car;
 import com.oocl.cultivation.ParkingBoy;
 import com.oocl.cultivation.ParkingLotServiceManager;
+import com.oocl.cultivation.Ticket;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -31,8 +32,8 @@ public class ParkingLotServiceManagerTest {
         ParkingBoy parkingBoy = new ParkingBoy();
         parkingLotServiceManager.addParkingBoy(parkingBoy);
         //when
-        Car car = parkingLotServiceManager.specifyParkingBoyToParkCar();
+        Ticket ticket = parkingLotServiceManager.specifyParkingBoyToParkCar();
         //then
-        Assertions.assertNotNull(car);
+        Assertions.assertNotNull(ticket);
     }
 }

@@ -86,7 +86,7 @@
 
 **given** ParkingLotServiceManager  ParkingBoy in ManagementList
 **when**  specifyParkingBoyToParkCar
-**then**  car
+**then**  Ticket
 
 **given** ParkingLotServiceManager  
 **when**  specifyParkingBoyToFetch 
