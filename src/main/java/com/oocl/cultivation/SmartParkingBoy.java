@@ -12,16 +12,6 @@ public class SmartParkingBoy extends ParkingBoy{
         super(parkingLotList);
     }
 
-    @Override
-    public Ticket parkCar(Car car) {
-        Integer parkingLotNo = parkCarInParkingLot(car);
-        if(parkingLotNo == -1){
-            return null;
-        }
-        Ticket ticket = generateTicket(parkingLotNo);
-        ticketTable.put(ticket,car);
-        return ticket;
-    }
 
     @Override
     protected Integer parkCarInParkingLot(Car car) {

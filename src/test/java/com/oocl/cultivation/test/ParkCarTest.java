@@ -217,23 +217,16 @@ public class ParkCarTest{
         Car car1 = new Car("C0001");
         Car car2 = new Car("C0002");
         Car car3 = new Car("C0003");
-        List<Car> parkingLot1CarList = parkingLot1.getCarList();
-        parkingLot1CarList.add(car1);
-        parkingLot1CarList.add(car2);
-        parkingLot1CarList.add(car3);
 
-        Car car4 = new Car("C0004");
-        Car car5 = new Car("C0005");
-        Car car6 = new Car("C0006");
         List<Car> parkingLot2CarList = parkingLot2.getCarList();
-        parkingLot2CarList.add(car4);
-        parkingLot2CarList.add(car5);
-        parkingLot2CarList.add(car6);
+        parkingLot2CarList.add(car1);
+        parkingLot2CarList.add(car2);
+        parkingLot2CarList.add(car3);
 
-        Car car7 = new Car("C0007");
+        Car car4 = new Car("C0007");
 
         //when
-        Ticket ticket = superSmartParkingBoy.parkCar(car7);
+        Ticket ticket = superSmartParkingBoy.parkCar(car4);
         //then
         Assertions.assertEquals(0,ticket.getParkingLotNo());
     }
