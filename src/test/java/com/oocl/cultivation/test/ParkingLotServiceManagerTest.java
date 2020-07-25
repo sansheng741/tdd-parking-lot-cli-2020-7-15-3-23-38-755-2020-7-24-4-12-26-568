@@ -25,7 +25,7 @@ public class ParkingLotServiceManagerTest {
     }
 
     @Test
-    public void should_return_car_when_specify_ParkingBoy_To_ParkCar_given_ParkingLotServiceManager_and_ParkingBoy_in_ManagementList() {
+    public void should_return_ticket_when_specify_ParkingBoy_To_ParkCar_given_ParkingLotServiceManager_and_ParkingBoy_in_ManagementList() {
 
         //given
         ParkingLotServiceManager parkingLotServiceManager = new ParkingLotServiceManager();
