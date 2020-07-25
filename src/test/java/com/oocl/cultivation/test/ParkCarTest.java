@@ -173,7 +173,7 @@ public class ParkCarTest{
 
 
     @Test
-    void should_park_car_in_parkingLot_2_parkCar_given_car_parkingBoy_parkingLot_1_and_parkingLot_2() {
+    void should_park_car_in_contains_more_empty_positions_parkCar_given_car_parkingBoy_parkingLot_1_and_parkingLot_2() {
         List<ParkingLot> parkingLotList = new ArrayList<>();
         ParkingLot parkingLot1 = new ParkingLot("P1");
         ParkingLot parkingLot2 = new ParkingLot("P2");
