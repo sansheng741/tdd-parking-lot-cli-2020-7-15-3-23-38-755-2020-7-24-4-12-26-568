@@ -78,3 +78,17 @@
 **given** SuperSmartParkingBoy Car parking_lot_1(available position rate 100%),parking_lot_2( available position rate 30%)  
 **when**  parkCar  
 **then**  park car in larger available position rate
+
+# Story6  
+**given** ParkingLotServiceManager  ParkingBoy  
+**when**  addParkingBoy  
+**then**  the ParkingBoys in ManagementList
+
+**given** ParkingLotServiceManager  
+**when**  specifyParkingBoyToParkCar
+**then**  car
+
+**given** ParkingLotServiceManager  
+**when**  specifyParkingBoyToFetch 
+**then**  car
+ 
