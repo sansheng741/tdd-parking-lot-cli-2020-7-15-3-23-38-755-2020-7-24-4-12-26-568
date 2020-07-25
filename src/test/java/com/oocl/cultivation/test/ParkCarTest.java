@@ -1,9 +1,6 @@
 package com.oocl.cultivation.test;
 
-import com.oocl.cultivation.Car;
-import com.oocl.cultivation.ParkingBoy;
-import com.oocl.cultivation.ParkingLot;
-import com.oocl.cultivation.Ticket;
+import com.oocl.cultivation.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.internal.matchers.Not;
@@ -170,6 +167,38 @@ public class ParkCarTest{
         parkingBoy.parkCar(car10);
         //when
         Ticket ticket = parkingBoy.parkCar(car);
+        //then
+        Assertions.assertEquals(1,ticket.getParkingLotNo());
+    }
+
+
+    @Test
+    void should_park_car_in_parkingLot_2_parkCar_given_car_parkingBoy_parkingLot_1_and_parkingLot_2() {
+        List<ParkingLot> parkingLotList = new ArrayList<>();
+        ParkingLot parkingLot1 = new ParkingLot("P1");
+        ParkingLot parkingLot2 = new ParkingLot("P2");
+        parkingLotList.add(parkingLot1);
+        parkingLotList.add(parkingLot2);
+
+        SmartParkingBoy smartPakingBoy = new SmartParkingBoy(parkingLotList);
+
+        Car car1 = new Car("C0001");
+        Car car2 = new Car("C0002");
+        Car car3 = new Car("C0003");
+        List<Car> parkingLot1CarList = parkingLot1.getCarList();
+        parkingLot1CarList.add(car1);
+        parkingLot1CarList.add(car2);
+        parkingLot1CarList.add(car3);
+
+        Car car4 = new Car("C0004");
+        Car car5 = new Car("C0005");
+        List<Car> parkingLot2CarList = parkingLot2.getCarList();
+        parkingLot2CarList.add(car4);
+        parkingLot2CarList.add(car5);
+
+        Car car6 = new Car("C0006");
+        //when
+        Ticket ticket = smartPakingBoy.parkCar(car6);
         //then
         Assertions.assertEquals(1,ticket.getParkingLotNo());
     }

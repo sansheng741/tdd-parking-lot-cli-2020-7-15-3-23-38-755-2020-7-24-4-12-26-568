@@ -68,3 +68,8 @@
 **given** ParkingBoy Car multiple_parking_lot(fitst parkingLot full)  
 **when**  parkCar  
 **then**  car part in second_part_lot  
+
+# Story4  
+**given** SmartParkingBoy Car parking_lot_2(already part 3 car),parking_lot_2(already part 2 car)  
+**when**  parkCar  
+**then**  park car in  parking_lot_2
