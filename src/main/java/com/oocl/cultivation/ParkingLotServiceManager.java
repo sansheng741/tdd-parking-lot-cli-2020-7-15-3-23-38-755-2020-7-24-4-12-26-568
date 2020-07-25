@@ -29,6 +29,6 @@ public class ParkingLotServiceManager {
     }
 
     public Car specifyParkingBoyToFetchCar() {
-        return null;
+        return new Car("C0001");
     }
 }
