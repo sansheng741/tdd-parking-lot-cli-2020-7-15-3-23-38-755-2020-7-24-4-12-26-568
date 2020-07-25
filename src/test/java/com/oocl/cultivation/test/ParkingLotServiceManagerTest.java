@@ -36,4 +36,16 @@ public class ParkingLotServiceManagerTest {
         //then
         Assertions.assertNotNull(ticket);
     }
+
+    @Test
+    public void should_return_car_when_specify_ParkingBoy_To_FetchCar_given_ParkingLotServiceManager_and_ParkingBoy_in_ManagementList() {
+        //given
+        ParkingLotServiceManager parkingLotServiceManager = new ParkingLotServiceManager();
+        ParkingBoy parkingBoy = new ParkingBoy();
+        parkingLotServiceManager.addParkingBoy(parkingBoy);
+        //when
+        Car car = parkingLotServiceManager.specifyParkingBoyToFetchCar();
+        //then
+        Assertions.assertNotNull(car);
+    }
 }

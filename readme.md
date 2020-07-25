@@ -84,11 +84,11 @@
 **when**  addParkingBoy  
 **then**  the ParkingBoys in ManagementList
 
-**given** ParkingLotServiceManager  ParkingBoy in ManagementList
-**when**  specifyParkingBoyToParkCar
-**then**  Ticket
+**given** ParkingLotServiceManager  ParkingBoy in ManagementList  
+**when**  specifyParkingBoyToParkCar  
+**then**  Ticket  
 
-**given** ParkingLotServiceManager  
-**when**  specifyParkingBoyToFetch 
-**then**  car
+**given** ParkingLotServiceManager  ParkingBoy in ManagementList  
+**when**  specifyParkingBoyToFetchCar  
+**then**  car  
  

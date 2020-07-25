@@ -27,4 +27,8 @@ public class ParkingLotServiceManager {
     public Ticket specifyParkingBoyToParkCar() {
         return new Ticket("T0001",0);
     }
+
+    public Car specifyParkingBoyToFetchCar() {
+        return null;
+    }
 }
