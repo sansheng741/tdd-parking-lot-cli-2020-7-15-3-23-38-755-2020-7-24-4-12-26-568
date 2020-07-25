@@ -10,7 +10,7 @@ import java.util.*;
 public class ParkingBoy {
 
     List<ParkingLot> parkingLotList;
-    private Map<Ticket,Car> ticketTable = new HashMap<>();
+    protected Map<Ticket,Car> ticketTable = new HashMap<>();
 
     public ParkingBoy() {
         List<ParkingLot> parkingLotList = new ArrayList<>();
@@ -33,12 +33,12 @@ public class ParkingBoy {
         return ticket;
     }
 
-    private Ticket generateTicket(Integer parkingLotNo) {
+    protected Ticket generateTicket(Integer parkingLotNo) {
         UUID uuid = UUID.randomUUID();
         return new Ticket(uuid.toString(),parkingLotNo);
     }
 
-    private Integer parkCarInParkingLot(Car car){
+    protected Integer parkCarInParkingLot(Car car){
         if(car == null){
             return -1;
         }
