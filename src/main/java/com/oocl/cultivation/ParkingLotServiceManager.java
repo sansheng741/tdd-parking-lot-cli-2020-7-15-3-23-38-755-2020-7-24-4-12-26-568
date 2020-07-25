@@ -17,7 +17,7 @@ public class ParkingLotServiceManager {
 
 
     public void addParkingBoy(ParkingBoy parkingBoy) {
-
+        parkingBoyList.add(parkingBoy);
     }
 
     public List<ParkingBoy> getParkingBoyList() {
