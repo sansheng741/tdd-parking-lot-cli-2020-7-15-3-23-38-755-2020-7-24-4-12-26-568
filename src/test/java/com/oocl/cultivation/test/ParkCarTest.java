@@ -171,6 +171,6 @@ public class ParkCarTest{
         //when
         Ticket ticket = parkingBoy.parkCar(car);
         //then
-        Assertions.assertNotNull("Not enough position.\n", systemOut());
+        Assertions.assertEquals(1,ticket.getParkingLotNo());
     }
 }

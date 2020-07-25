@@ -9,10 +9,14 @@ import java.util.*;
  */
 public class ParkingBoy {
 
-    List<ParkingLot> parkingLotList = new ArrayList<>();
+    List<ParkingLot> parkingLotList;
     private Map<Ticket,Car> ticketTable = new HashMap<>();
 
     public ParkingBoy() {
+        List<ParkingLot> parkingLotList = new ArrayList<>();
+        ParkingLot parkingLot = new ParkingLot("P1");
+        parkingLotList.add(parkingLot);
+        this.parkingLotList = parkingLotList;
     }
 
     public ParkingBoy(List<ParkingLot> parkingLotList) {
@@ -20,34 +24,40 @@ public class ParkingBoy {
     }
 
     public Ticket parkCar(Car car) {
-        boolean isPark = parkCarInParkingLot(car);
-        if(!isPark){
+        Integer parkingLotNo = parkCarInParkingLot(car);
+        if(parkingLotNo == -1){
             return null;
         }
-        Ticket ticket = generateTicket();
+        Ticket ticket = generateTicket(parkingLotNo);
         ticketTable.put(ticket,car);
         return ticket;
     }
 
-    private Ticket generateTicket() {
+    private Ticket generateTicket(Integer parkingLotNo) {
         UUID uuid = UUID.randomUUID();
-        return new Ticket(uuid.toString());
+        return new Ticket(uuid.toString(),parkingLotNo);
     }
 
-    private boolean parkCarInParkingLot(Car car){
+    private Integer parkCarInParkingLot(Car car){
         if(car == null){
-            return false;
+            return -1;
         }
-        List<Car> carList = parkingLot.getCarList();
-        if(carList.size() >= 10){
-            System.out.print("Not enough position.\n");
-            return false;
+        for(int i = 0; i < parkingLotList.size(); i++){
+            ParkingLot parkingLot = parkingLotList.get(i);
+            List<Car> carList = parkingLot.getCarList();
+
+            if(carList.contains(car)){
+                return -1;
+            }
+
+            if(carList.size() >= parkingLot.getCapacity()){
+                continue;
+            }
+            carList.add(car);
+            return i;
         }
-        if(carList.contains(car)){
-            return false;
-        }
-        carList.add(car);
-        return true;
+        System.out.print("Not enough position.\n");
+        return -1;
     }
 
     public Car fetchCar(Ticket ticket) {

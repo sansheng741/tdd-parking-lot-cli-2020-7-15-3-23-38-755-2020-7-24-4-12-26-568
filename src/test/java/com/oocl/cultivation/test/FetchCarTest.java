@@ -52,7 +52,7 @@ public class FetchCarTest {
         Car car = new Car("C0001");
         parkingBoy.parkCar(car);
         //when
-        Car getCarByWrongTicket = parkingBoy.fetchCar(new Ticket("T0001"));
+        Car getCarByWrongTicket = parkingBoy.fetchCar(new Ticket("T0001",1));
         //then
         Assertions.assertNull(getCarByWrongTicket);
     }
@@ -89,7 +89,7 @@ public class FetchCarTest {
         Car car = new Car("C0001");
         parkingBoy.parkCar(car);
         //when
-        car = parkingBoy.fetchCar(new Ticket("T0001"));
+        car = parkingBoy.fetchCar(new Ticket("T0001",1));
         //then
         Assertions.assertEquals("Unrecognized parking ticket.\n", systemOut());
     }

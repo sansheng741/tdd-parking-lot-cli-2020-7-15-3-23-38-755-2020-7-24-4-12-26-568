@@ -8,6 +8,7 @@ import java.util.List;
  * @create 2020-07-24 20:32
  */
 public class ParkingLot {
+
     private String id;
     private int capacity;
     private List<Car> carList = new ArrayList<>();
@@ -21,6 +22,7 @@ public class ParkingLot {
     }
 
     public ParkingLot(String id) {
+        this();
         this.id = id;
     }
 
