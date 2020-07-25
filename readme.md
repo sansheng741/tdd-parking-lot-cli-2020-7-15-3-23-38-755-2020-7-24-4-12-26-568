@@ -70,6 +70,11 @@
 **then**  car part in second_part_lot  
 
 # Story4  
-**given** SmartParkingBoy Car parking_lot_2(already part 3 car),parking_lot_2(already part 2 car)  
+**given** SmartParkingBoy Car parking_lot_1(already part 3 car),parking_lot_2(already part 2 car)  
 **when**  parkCar  
 **then**  park car in contains more empty positions
+
+# Story5  
+**given** SuperSmartParkingBoy Car parking_lot_1(available position rate 100%),parking_lot_2( available position rate 30%)  
+**when**  parkCar  
+**then**  park car in larger available position rate

@@ -173,7 +173,7 @@ public class ParkCarTest{
 
 
     @Test
-    void should_park_car_in_contains_more_empty_positions_parkCar_given_car_parkingBoy_parkingLot_1_and_parkingLot_2() {
+    void should_park_car_in_contains_more_empty_positions_when_parkCar_given_car_SmartParkingBoy_parkingLot_1_and_parkingLot_2() {
         List<ParkingLot> parkingLotList = new ArrayList<>();
         ParkingLot parkingLot1 = new ParkingLot("P1");
         ParkingLot parkingLot2 = new ParkingLot("P2");
@@ -201,5 +201,40 @@ public class ParkCarTest{
         Ticket ticket = smartPakingBoy.parkCar(car6);
         //then
         Assertions.assertEquals(1,ticket.getParkingLotNo());
+    }
+
+
+    @Test
+    void should_park_car_in_larger_available_position_rate_when_parkCar_given_car_SuperSmartParkingBoy_parkingLot_1_and_parkingLot_2() {
+        List<ParkingLot> parkingLotList = new ArrayList<>();
+        ParkingLot parkingLot1 = new ParkingLot("P1",3);
+        ParkingLot parkingLot2 = new ParkingLot("P2",10);
+        parkingLotList.add(parkingLot1);
+        parkingLotList.add(parkingLot2);
+
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(parkingLotList);
+
+        Car car1 = new Car("C0001");
+        Car car2 = new Car("C0002");
+        Car car3 = new Car("C0003");
+        List<Car> parkingLot1CarList = parkingLot1.getCarList();
+        parkingLot1CarList.add(car1);
+        parkingLot1CarList.add(car2);
+        parkingLot1CarList.add(car3);
+
+        Car car4 = new Car("C0004");
+        Car car5 = new Car("C0005");
+        Car car6 = new Car("C0006");
+        List<Car> parkingLot2CarList = parkingLot2.getCarList();
+        parkingLot2CarList.add(car4);
+        parkingLot2CarList.add(car5);
+        parkingLot2CarList.add(car6);
+
+        Car car7 = new Car("C0007");
+
+        //when
+        Ticket ticket = superSmartParkingBoy.parkCar(car7);
+        //then
+        Assertions.assertEquals(0,ticket.getParkingLotNo());
     }
 }

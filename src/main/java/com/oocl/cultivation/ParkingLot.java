@@ -26,6 +26,11 @@ public class ParkingLot {
         this.id = id;
     }
 
+    public ParkingLot(String id, int capacity) {
+        this.id = id;
+        this.capacity = capacity;
+    }
+
     public int getCapacity() {
         return capacity;
     }
