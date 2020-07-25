@@ -16,7 +16,11 @@ public class ParkingLotServiceManager {
     }
 
 
-    public boolean addParkingBoy(ParkingBoy parkingBoy) {
-        return false;
+    public void addParkingBoy(ParkingBoy parkingBoy) {
+
+    }
+
+    public List<ParkingBoy> getParkingBoyList() {
+        return parkingBoyList;
     }
 }

@@ -17,8 +17,8 @@ public class ParkingLotServiceManagerTest {
         ParkingLotServiceManager parkingLotServiceManager = new ParkingLotServiceManager();
         ParkingBoy parkingBoy = new ParkingBoy();
         //when
-        boolean isSuccessfullyAdd = parkingLotServiceManager.addParkingBoy(parkingBoy);
+        parkingLotServiceManager.addParkingBoy(parkingBoy);
         //then
-        Assertions.assertTrue(isSuccessfullyAdd);
+        Assertions.assertTrue(parkingLotServiceManager.getParkingBoyList().contains(parkingBoy));
     }
 }
