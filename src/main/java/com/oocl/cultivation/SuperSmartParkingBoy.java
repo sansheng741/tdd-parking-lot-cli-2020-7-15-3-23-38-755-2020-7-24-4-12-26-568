@@ -25,18 +25,19 @@ public class SuperSmartParkingBoy extends ParkingBoy{
             if(parkingLot.getCarList().contains(car)){
                 return -1;
             }
-            int availablePositionRate = (parkingLot.getCapacity() - parkingLot.getCarList().size())/parkingLot.getCapacity();
-            if (parkingLotEmptyPositions < emptyPosition) {
-                moreEmptyPositionsParkLog = parkingLot;
-                parkingLotEmptyPositions = emptyPosition;
+            double availablePositionRate = (double) (parkingLot.getCapacity() - parkingLot.getCarList().size())/parkingLot.getCapacity();
+
+            if (parkingLotAvailablePositionRate < availablePositionRate) {
+                parkingLotAvailablePositionRate = availablePositionRate;
+                largerAvailablePositionRateParkingLot = parkingLot;
                 parkingLotNo = i;
             }
         }
-        if(moreEmptyPositionsParkLog != null && moreEmptyPositionsParkLog.getCarList().size() >= moreEmptyPositionsParkLog.getCapacity()){
+        if(largerAvailablePositionRateParkingLot != null && largerAvailablePositionRateParkingLot.getCarList().size() >= largerAvailablePositionRateParkingLot.getCapacity()){
             System.out.print("Not enough position.\n");
             return  -1;
         }
-        moreEmptyPositionsParkLog.getCarList().add(car);
+        largerAvailablePositionRateParkingLot.getCarList().add(car);
         return parkingLotNo;
     }
 }

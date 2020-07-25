@@ -223,7 +223,7 @@ public class ParkCarTest{
         parkingLot2CarList.add(car2);
         parkingLot2CarList.add(car3);
 
-        Car car4 = new Car("C0007");
+        Car car4 = new Car("C0004");
 
         //when
         Ticket ticket = superSmartParkingBoy.parkCar(car4);
