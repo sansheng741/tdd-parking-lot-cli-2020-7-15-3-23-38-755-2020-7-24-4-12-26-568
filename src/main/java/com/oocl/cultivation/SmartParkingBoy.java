@@ -28,21 +28,22 @@ public class SmartParkingBoy extends ParkingBoy{
         if(car == null){
             return -1;
         }
-        ParkingLot moreEmptyPositionsParkLog = new ParkingLot();
-        int parkingLotSize = moreEmptyPositionsParkLog.getCapacity() + 1;
+        ParkingLot moreEmptyPositionsParkLog = null;
+        int parkingLotEmptyPositions = 0;
         int parkingLotNo = -1;
         for(int i = 0; i < parkingLotList.size(); i++) {
             ParkingLot parkingLot = parkingLotList.get(i);
             if(parkingLot.getCarList().contains(car)){
                 return -1;
             }
-            if (parkingLotSize > parkingLot.getCarList().size()) {
+            int emptyPosition = parkingLot.getCapacity() - parkingLot.getCarList().size();
+            if (parkingLotEmptyPositions < emptyPosition) {
                 moreEmptyPositionsParkLog = parkingLot;
-                parkingLotSize = parkingLot.getCarList().size();
+                parkingLotEmptyPositions = emptyPosition;
                 parkingLotNo = i;
             }
         }
-        if(moreEmptyPositionsParkLog.getCarList().size() >= moreEmptyPositionsParkLog.getCapacity()){
+        if(moreEmptyPositionsParkLog != null && moreEmptyPositionsParkLog.getCarList().size() >= moreEmptyPositionsParkLog.getCapacity()){
             System.out.print("Not enough position.\n");
             return  -1;
         }
