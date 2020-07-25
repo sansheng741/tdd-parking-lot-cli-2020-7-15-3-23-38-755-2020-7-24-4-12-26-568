@@ -84,7 +84,7 @@
 **when**  addParkingBoy  
 **then**  the ParkingBoys in ManagementList
 
-**given** ParkingLotServiceManager  
+**given** ParkingLotServiceManager  ParkingBoy in ManagementList
 **when**  specifyParkingBoyToParkCar
 **then**  car
 

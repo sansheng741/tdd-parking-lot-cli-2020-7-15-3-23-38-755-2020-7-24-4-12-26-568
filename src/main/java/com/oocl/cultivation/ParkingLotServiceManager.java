@@ -23,4 +23,8 @@ public class ParkingLotServiceManager {
     public List<ParkingBoy> getParkingBoyList() {
         return parkingBoyList;
     }
+
+    public Car specifyParkingBoyToParkCar() {
+        return null;
+    }
 }
